@@ -1,0 +1,29 @@
+CONFIG_NAME: 'train coco with transformer'
+
+DATASET_NAME : 'coco'
+DATA_DIR: "/media/liby/mbdyn_data/datasets/coco/cocostuff"
+GPU_ID: 0
+WORKERS: 5
+
+B_VALIDATION: False
+
+TRAIN:
+    FLAG: True
+    BATCH_SIZE: 8
+    MAX_EPOCH: 100
+    SNAPSHOT_INTERVAL: 2000
+    GENERATOR_LR: 0.0002
+    DISCRIMINATOR_LR: 0.0002
+    SMOOTH:
+        GAMMA1: 4.0  # 1,2,5 good 4 best  10&100bad
+        GAMMA2: 5.0
+        GAMMA3: 10.0  # 10good 1&100bad
+        LAMBDA: 50.0
+
+TEXT: 
+    CAPTIONS_PER_IMAGE: 5
+    EMBEDDING_DIM: 256
+    WORDS_NUM: 12
+
+IMAGE:
+    FEAT_EMB_DIM: 32
